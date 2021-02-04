@@ -1,7 +1,7 @@
+@use "sass:color";
 
 $version: "1.0.0";
 
-$column-gutter: 10px;
 $column-padding: 10px;
 
 $font-base: 14px;
@@ -9,6 +9,11 @@ $font-xl: 2.25em;
 $font-lg: 1.85em;
 $font-md: 1.25em;
 $font-sm: 0.85em;
+
+$btn-bg: #3477d3;
+$btn-border: color.scale($btn-bg, $lightness: -10%);
+$btn-color: color.scale($btn-bg, $lightness: 90%);
+$btn-radius: 3px;
 
 
 body {
@@ -25,7 +30,7 @@ main.secondary {
 }
 
 header {
-    margin: 0 $column-gutter;
+    margin: 0;
     padding: $column-padding;
 }
 
@@ -34,14 +39,38 @@ page-title {
 }
 
 row {
+    margin: 0 -$column-padding;
+}
+
+
+@media(max-width: 767px) {
+    row {
+        display: block;
+    }
 }
 
 column {
-    margin: 0 $column-gutter;
+    margin: 0;
     padding: $column-padding;
 
     &.content {
         flex: 1 1 auto;
+    }
+
+
+    @media(min-width: 768px) {
+
+        &.cols-2 {
+            width: 50%;
+        }
+
+        &.cols-3 {
+            width: 33%;
+        }
+
+        &.cols-4 {
+            width: 25%;
+        }
     }
 }
 
@@ -53,13 +82,71 @@ nav-item > button {
     width: 100%;
 }
 
+banner {
+    display: block;
+    font-size: $font-lg;
+    margin-bottom: 1em;
+}
+
+section {
+    background: white;
+    box-shadow: rgb(0 0 0 / 15%) 2px 3px 6px;
+    display: block;
+}
+
+section-header {
+    display: block;
+    font-size: $font-md;
+    margin: 0.5rem 0;
+}
+
+button {
+    background-color: transparent;
+    border: solid 1px transparent;
+    border-radius: $btn-radius;
+    outline: 0;
+    padding: 3px 6px;
+
+    &:hover {
+        background-color: color.scale($btn-bg, $lightness: 50%, $saturation: 33%);
+    }
+
+    &:active {
+        background-color: $btn-bg;
+    }
+
+    &.raised {
+        background-color: $btn-bg;
+        border: solid 1px $btn-border;
+        color: $btn-color;
+
+        &:active {
+            background-color: color.scale($btn-bg, $lightness: 10%, $saturation: 10%);
+        }
+    }
+
+    &.outlined {
+        border: solid 1px $btn-border;
+    }
+}
+
+
+
+/* now we get into context-specific styling */
+
+
 .introduction p {
     font-size: $font-md;
 }
 
-/* now we get into context-specific styling */
 
 .secondary section {
     border: solid 1px #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
+component-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}

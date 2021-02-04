@@ -1,3 +1,7 @@
 .vs/
 node_modules/
+**/*.log
+**/*.map
+
 src/**/*.js
+src/example/css/design-language.css
