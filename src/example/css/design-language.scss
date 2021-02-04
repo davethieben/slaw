@@ -1,0 +1,65 @@
+
+$version: "1.0.0";
+
+$column-gutter: 10px;
+$column-padding: 10px;
+
+$font-base: 14px;
+$font-xl: 2.25em;
+$font-lg: 1.85em;
+$font-md: 1.25em;
+$font-sm: 0.85em;
+
+
+body {
+    font-size: $font-base;
+}
+
+main.primary {
+    padding: 20px;
+}
+
+main.secondary {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+header {
+    margin: 0 $column-gutter;
+    padding: $column-padding;
+}
+
+page-title {
+    font-size: $font-xl;
+}
+
+row {
+}
+
+column {
+    margin: 0 $column-gutter;
+    padding: $column-padding;
+
+    &.content {
+        flex: 1 1 auto;
+    }
+}
+
+nav {
+    min-width: 15vw;
+}
+
+nav-item > button {
+    width: 100%;
+}
+
+.introduction p {
+    font-size: $font-md;
+}
+
+/* now we get into context-specific styling */
+
+.secondary section {
+    border: solid 1px #ccc;
+}
+

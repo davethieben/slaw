@@ -1,0 +1,27 @@
+{
+  "name": "slaw",
+  "version": "1.0.0",
+  "description": "semantic language for web styling",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davethieben/slaw.git"
+  },
+  "keywords": [
+    "semantic",
+    "CSS"
+  ],
+  "author": "Dave Thieben",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davethieben/slaw/issues"
+  },
+  "homepage": "https://github.com/davethieben/slaw#readme",
+  "devDependencies": {
+    "sass": "^1.32.6",
+    "typescript": "^4.1.3"
+  }
+}
